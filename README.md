@@ -61,6 +61,7 @@ Handles shortening, redirection, and click tracking.
 
 ### 🔌 API Endpoints
 - Base API URL: [http://localhost:8080/v1/short-url](http://localhost:8080/v1/short-url)
+
 | Method | Endpoint             | Description               |
 |--------|----------------------|---------------------------|
 | POST   | /shorten         	| Create a short URL        |
