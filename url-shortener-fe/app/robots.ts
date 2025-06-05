@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://shorturl.vn/sitemap.xml",
+    sitemap: "https://shorturl.tranbadat.vn/sitemap.xml",
   }
 }

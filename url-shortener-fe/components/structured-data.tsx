@@ -1,6 +1,6 @@
 // This is now a server component
 export default function StructuredData({ language, isHomePage }: { language: "en" | "vi"; isHomePage: boolean }) {
-  const baseUrl = "https://shorturl.vn"
+  const baseUrl = "https://shorturl.tranbadat.vn"
 
   // Always use the same URL regardless of language
   const currentUrl = baseUrl

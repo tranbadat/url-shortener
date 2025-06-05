@@ -33,7 +33,7 @@ const translations: Record<Language, TranslationDict> = {
     yourShortenedUrl: "Your shortened URL",
     copyToClipboard: "Copy to clipboard",
     linkWillExpire: ({ days }: { days: number }) => `Expires in ${days} days`,
-    footer: "Made with ❤️ by URL Shortener",
+    footer: "Made with ❤️ by dattb.com",
     switchLanguage: "Switch language",
 
     // Terms related translations
@@ -72,7 +72,7 @@ const translations: Record<Language, TranslationDict> = {
 
     contactTitle: "Contact Information",
     contactText:
-      "If you have any questions about these Terms and Conditions or our data practices, please contact us at support@shorturl.vn.",
+      "If you have any questions about these Terms and Conditions or our data practices, please contact us at support@shorturl.tranbadat.vn.",
 
     termsAgreement:
       "I have read and agree to the Terms and Conditions, including the storage of my submitted URLs and associated data for the purpose of providing this service.",
@@ -105,7 +105,7 @@ const translations: Record<Language, TranslationDict> = {
     yourShortenedUrl: "URL rút gọn của bạn",
     copyToClipboard: "Sao chép vào clipboard",
     linkWillExpire: ({ days }: { days: number }) => `Hết hạn sau ${days} ngày`,
-    footer: "Được tạo với ❤️ bởi URL Shortener",
+    footer: "Được tạo với ❤️ bởi dattb.com",
     switchLanguage: "Đổi ngôn ngữ",
 
     // Terms related translations
@@ -146,7 +146,7 @@ const translations: Record<Language, TranslationDict> = {
 
     contactTitle: "Thông Tin Liên Hệ",
     contactText:
-      "Nếu bạn có bất kỳ câu hỏi nào về các Điều Khoản và Điều Kiện này hoặc cách thức xử lý dữ liệu của chúng tôi, vui lòng liên hệ với chúng tôi tại support@shorturl.vn.",
+      "Nếu bạn có bất kỳ câu hỏi nào về các Điều Khoản và Điều Kiện này hoặc cách thức xử lý dữ liệu của chúng tôi, vui lòng liên hệ với chúng tôi tại support@shorturl.tranbadat.vn.",
 
     termsAgreement:
       "Tôi đã đọc và đồng ý với Điều Khoản và Điều Kiện, bao gồm việc lưu trữ các URL tôi gửi và dữ liệu liên quan nhằm mục đích cung cấp dịch vụ này.",
