@@ -60,11 +60,11 @@ Handles shortening, redirection, and click tracking.
 - RESTful API
 
 ### 🔌 API Endpoints
-
+- Base API URL: [http://localhost:8080/v1/short-url](http://localhost:8080/v1/short-url)
 | Method | Endpoint             | Description               |
 |--------|----------------------|---------------------------|
-| POST   | /api/shorten         | Create a short URL        |
-| GET    | /{shortCode}         | Redirect to original URL  |
+| POST   | /shorten         	| Create a short URL        |
+| GET    | /lookup/{shortCode}	| Redirect to original URL  |
 | GET    | /api/stats/{code}    | Get click statistics      |
 
 ### ▶️ Run Backend Locally
