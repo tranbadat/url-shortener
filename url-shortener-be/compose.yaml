@@ -39,7 +39,7 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: 'C:\\Users\\HLC\\Documents\\docker-mount\\image-data\\short-url'
+      device: '\opt\postgres-data'
 networks:
   short-url-network:
     driver: bridge
