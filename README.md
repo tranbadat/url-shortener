@@ -1,6 +1,9 @@
 # 🔗 URL Shortener – Full Stack Project
 
-A modern URL shortener application with analytics, custom aliases, and expiration support. Built using **Java Spring Boot** for the backend, **Next.js** for the frontend, and **PostgreSQL** for data storage. Dockerized for easy deployment.
+A modern URL shortener application with analytics, custom aliases, and expiration support.  
+Built using **Java Spring Boot** for the backend, **Next.js** for the frontend, and **PostgreSQL** for data storage. Dockerized for easy deployment.
+
+🌐 **Live Demo**: [https://shorturl.tranbadat.vn](https://shorturl.tranbadat.vn)
 
 ---
 
@@ -8,10 +11,11 @@ A modern URL shortener application with analytics, custom aliases, and expiratio
 
 ```
 url-shortener/
-├── backend/        # Spring Boot backend API
-├── frontend/       # Next.js frontend
+├── url-shortener-be/        # Spring Boot backend API
+├── url-shortener-fe/       # Next.js frontend
+├── resources/      # Demo images (image1.png, image2.png)
 ├── docker-compose.yml
-└── README.md       # This file
+└── README.md
 ```
 
 ---
@@ -24,6 +28,17 @@ url-shortener/
 | Backend   | Java Spring Boot |
 | Database  | PostgreSQL       |
 | DevOps    | Docker Compose   |
+
+---
+
+## 🖼️ UI Preview
+
+Home page and core features:
+
+<p float="left">
+  <img src="./resources/homepage-light-theme.PNG" width="45%" />
+  <img src="./resources/homepage-dark-theme.PNG" width="45%" />
+</p>
 
 ---
 
@@ -60,44 +75,43 @@ Handles shortening, redirection, and click tracking.
 - RESTful API
 
 ### 🔌 API Endpoints
-- Base API URL: [http://localhost:8080/v1/short-url](http://localhost:8080/v1/short-url)
 
-| Method | Endpoint             | Description               |
-|--------|----------------------|---------------------------|
-| POST   | /shorten         	| Create a short URL        |
-| GET    | /lookup/{shortCode}	| Redirect to original URL  |
-| GET    | /api/stats/{code}    | Get click statistics      |
+Base API: `http://localhost:8080/v1/short-url`
+
+| Method | Endpoint               | Description               |
+|--------|------------------------|---------------------------|
+| POST   | /shorten               | Create a short URL        |
+| GET    | /lookup/{shortCode}   | Redirect to original URL  |
+| GET    | /api/stats/{code}     | Get click statistics      |
 
 ### ▶️ Run Backend Locally
 
 ```bash
-cd backend
-./mvnw spring-boot:run
+cd url-shortener-be
+./gradlew bootRun
 ```
-
-Backend runs at `http://localhost:8080`
 
 #### Configuration (in `application.yml`)
 
 ```yaml
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/url_db
-    username: youruser
-    password: yourpass
+    url: jdbc:postgresql://localhost:5432/short-url
+    username: dattb
+    password: dattb123
 ```
 
 ### 🧪 Run Backend Tests
 
 ```bash
-./mvnw test
+./gradlew test
 ```
 
 ---
 
 ## 🖼️ Frontend – Next.js App
 
-User interface to interact with the API for shortening and viewing links.
+Frontend interface for creating short links and tracking usage.
 
 ### 🧱 Stack
 
@@ -116,16 +130,16 @@ User interface to interact with the API for shortening and viewing links.
 ### ▶️ Run Frontend Locally
 
 ```bash
-cd frontend
+cd url-shortener-fe
 npm install
 npm run dev
 ```
 
-Frontend runs at [http://localhost:3000](http://localhost:3000)
+Frontend available at: [http://localhost:3000](http://localhost:3000)
 
 ### 🌐 API Configuration
 
-Create a `.env.local` file in `frontend/`:
+Create a `.env.local` file in the `frontend/` directory:
 
 ```env
 NEXT_PUBLIC_API_BASE_URL=http://localhost:8080
@@ -143,15 +157,16 @@ docker-compose up --build
 
 This will start:
 
-- Spring Boot app on `http://localhost:8080`
-- Next.js frontend on `http://localhost:3000`
-- PostgreSQL database on port `5432`
+- 🧠 Spring Boot backend at `http://localhost:8080`
+- 🌐 Next.js frontend at `http://localhost:3000`
+- 🐘 PostgreSQL database on port `5432`
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Fork the repository, create a new branch, and submit a pull request.
+Contributions are welcome!  
+Fork the repository, create a new branch, and submit a pull request.
 
 ---
 
