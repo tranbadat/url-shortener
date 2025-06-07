@@ -1,0 +1,59 @@
+# Global ignores
+.DS_Store
+Thumbs.db
+*.log
+
+# Node.js (Next.js url-shortener-fe)
+url-shortener-fe/node_modules/
+url-shortener-fe/.next/
+url-shortener-fe/.env.local
+url-shortener-fe/.env.production.local
+url-shortener-fe/.env.development.local
+url-shortener-fe/.env.test.local
+url-shortener-fe/.eslintcache
+url-shortener-fe/npm-debug.log*
+url-shortener-fe/yarn-debug.log*
+url-shortener-fe/yarn-error.log*
+
+# Java (Spring Boot url-shortener-be with Gradle)
+url-shortener-be/build/
+url-shortener-be/.gradle/
+url-shortener-be/.idea/
+url-shortener-be/*.iml
+url-shortener-be/.classpath
+url-shortener-be/.project
+url-shortener-be/.settings/
+url-shortener-be/.env
+url-shortener-be/.env.local
+url-shortener-be/logs/
+url-shortener-be/*.log
+url-shortener-be/gradle-app.setting
+url-shortener-be/gradlew
+url-shortener-be/gradlew.bat
+
+# Gradle Wrapper
+url-shortener-be/gradle/wrapper/gradle-wrapper.properties
+url-shortener-be/gradle/wrapper/gradle-wrapper.jar
+
+# Docker
+*.pid
+*.seed
+docker-compose.override.yml
+
+# OS/Editor Specific
+.vscode/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.ipr
+*.iml
+
+# Eclipse
+*.classpath
+*.project
+*.settings/

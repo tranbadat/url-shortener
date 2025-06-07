@@ -1,0 +1,59 @@
+services:
+
+  postgres:
+    image: postgres:13
+    hostname: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-d", "short-url", "-U", "dattb" ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    environment:
+      POSTGRES_USER: 'dattb'
+      POSTGRES_PASSWORD: 'dattb123'
+      POSTGRES_DB: 'short-url'
+    networks:
+      - short-url-network
+  short-url-service:
+    container_name: short-url-service
+    build:
+      context: ./url-shortener-be
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8000"
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/short-url
+      SPRING_DATASOURCE_USERNAME: dattb
+      SPRING_DATASOURCE_PASSWORD: dattb123
+      SHORTENER_DOMAIN: https://shorturl.tranbadat.vn/
+    networks:
+      - short-url-network
+  frontend:
+    container_name: short-url-frontend
+    build:
+      context: ./url-shortener-fe
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - short-url-service
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://short-url-service:8000
+    networks:
+      - short-url-network
+volumes:
+  postgres-data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '\opt\postgres-data'
+networks:
+  short-url-network:
+    driver: bridge

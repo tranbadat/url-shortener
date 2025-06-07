@@ -1,0 +1,26 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <!-- Added the entity short-url -->
+    <changeSet id="20250514210000-1" author="dattb">
+        <createSequence sequenceName="custom_short_id_seq" startValue="987654321" incrementBy="1"/>
+        <createTable tableName="short_url_info">
+            <column name="id" type="BIGINT" defaultValueComputed="nextval('custom_short_id_seq')">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="short_code" type="VARCHAR(255)"/>
+            <column name="user_id" type="VARCHAR(255)"/>
+            <column name="long_url" type="TEXT"/>
+            <column name="long_url_hash" type="VARCHAR(64)"/>
+            <column name="expiration_time" type="TIMESTAMP"/>
+            <column name="created_at" type="TIMESTAMP"/>
+            <column name="updated_at" type="TIMESTAMP"/>
+            <column name="is_deleted" type="BOOLEAN"/>
+        </createTable>
+        <createIndex tableName="short_url_info" indexName="idx_short_url_info_short_code">
+            <column name="short_code"/>
+        </createIndex>
+        <createIndex tableName="short_url_info" indexName="idx_long_url_hash">
+            <column name="long_url_hash"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>
